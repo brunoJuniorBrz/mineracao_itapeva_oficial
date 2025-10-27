@@ -3,6 +3,7 @@
 
 import Navbar from '@/components/navigation/navbar'
 import ContactForm from '@/components/ui/contact-form'
+import Reveal from '@/components/ui/reveal'
 import Image from 'next/image'
 import { Wheat, Award, CheckCircle, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
@@ -72,7 +73,7 @@ export default function AnimalNutritionPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/40" />
         <div className="relative z-10 flex items-center justify-center px-4 py-24">
-          <div className="max-w-3xl text-center px-6 py-8 bg-black/45 backdrop-blur-sm rounded-lg shadow-md space-y-6">
+          <Reveal className="max-w-3xl text-center px-6 py-8 bg-black/45 backdrop-blur-sm rounded-lg shadow-md space-y-6">
             <p className="uppercase tracking-[0.4em] text-green-300 text-xs font-semibold">
               Linha Nutrição Animal
             </p>
@@ -89,27 +90,31 @@ export default function AnimalNutritionPage() {
             >
               Conhecer portfólio
             </Link>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* Benefits */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-16">
+          <Reveal className="text-center mb-16 space-y-4">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Vantagens dos Nossos Minerais
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Qualidade superior que contribui para a saúde e desenvolvimento animal
             </p>
-          </div>
+          </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {benefits?.map((benefit, index) => {
               const Icon = benefit?.icon
               return (
-                <div key={index} className="text-center p-6 rounded-xl hover:shadow-lg transition-shadow duration-300 border border-gray-100">
+                <Reveal
+                  key={index}
+                  delay={index * 0.1}
+                  className="text-center rounded-xl border border-gray-100 p-6 transition-shadow duration-300 hover:shadow-lg"
+                >
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-6">
                     <Icon className="w-8 h-8 text-green-600" />
                   </div>
@@ -119,7 +124,7 @@ export default function AnimalNutritionPage() {
                   <p className="text-gray-600 leading-relaxed">
                     {benefit?.description || ''}
                   </p>
-                </div>
+                </Reveal>
               )
             })}
           </div>
@@ -129,65 +134,66 @@ export default function AnimalNutritionPage() {
       {/* Products Grid */}
       <section id="produtos" className="py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-16">
+          <Reveal className="text-center mb-16 space-y-4">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Nossos Produtos para Nutrição Animal
             </h2>
             <p className="text-xl text-gray-600">
               Minerais de alta qualidade desenvolvidos especialmente para ração animal
             </p>
-          </div>
+          </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {products?.map((product) => (
-              <Link 
-                key={product?.id} 
-                href={product?.link || '#'}
-                className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
-              >
-                {/* Product Image */}
-                <div className="relative h-80 bg-gradient-to-br from-green-50 to-gray-50">
-                  <Image
-                    src={product?.image || '/placeholder-product.jpg'}
-                    alt={product?.name || 'Produto'}
-                    fill
-                    className="object-contain p-8"
-                  />
-                </div>
-
-                {/* Product Info */}
-                <div className="p-8">
-                  <h3 className="text-3xl font-bold text-gray-900 mb-2">
-                    {product?.name || ''}
-                  </h3>
-                  <p className="text-lg text-green-600 font-semibold mb-4">
-                    {product?.subtitle || ''}
-                  </p>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
-                    {product?.description || ''}
-                  </p>
-
-                  {/* Highlights */}
-                  <div className="mb-6">
-                    <ul className="space-y-2">
-                      {product?.highlights?.map((highlight, index) => (
-                        <li key={index} className="flex items-start text-sm text-gray-700">
-                          <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                          <span>{highlight}</span>
-                        </li>
-                      ))}
-                    </ul>
+            {products?.map((product, index) => (
+              <Reveal key={product?.id ?? index} delay={index * 0.1} className="h-full">
+                <Link
+                  href={product?.link || '#'}
+                  className="group flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+                >
+                  {/* Product Image */}
+                  <div className="relative h-80 bg-gradient-to-br from-green-50 to-gray-50">
+                    <Image
+                      src={product?.image || '/placeholder-product.jpg'}
+                      alt={product?.name || 'Produto'}
+                      fill
+                      className="object-contain p-8"
+                    />
                   </div>
 
-                  {/* CTA */}
-                  <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                    <span className="text-green-600 font-semibold group-hover:text-green-700">
-                      Ver Detalhes Completos
-                    </span>
-                    <ArrowRight className="w-5 h-5 text-green-600 group-hover:translate-x-2 transition-transform" />
+                  {/* Product Info */}
+                  <div className="flex flex-1 flex-col p-8">
+                    <h3 className="text-3xl font-bold text-gray-900 mb-2">
+                      {product?.name || ''}
+                    </h3>
+                    <p className="text-lg text-green-600 font-semibold mb-4">
+                      {product?.subtitle || ''}
+                    </p>
+                    <p className="text-gray-600 mb-6 leading-relaxed">
+                      {product?.description || ''}
+                    </p>
+
+                    {/* Highlights */}
+                    <div className="mb-6">
+                      <ul className="space-y-2">
+                        {product?.highlights?.map((highlight, highlightIndex) => (
+                          <li key={highlightIndex} className="flex items-start text-sm text-gray-700">
+                            <CheckCircle className="mr-2 h-4 w-4 flex-shrink-0 text-green-500" />
+                            <span>{highlight}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* CTA */}
+                    <div className="mt-auto flex items-center justify-between border-t border-gray-100 pt-4">
+                      <span className="text-green-600 font-semibold transition-colors group-hover:text-green-700">
+                        Ver Detalhes Completos
+                      </span>
+                      <ArrowRight className="h-5 w-5 text-green-600 transition-transform group-hover:translate-x-2" />
+                    </div>
                   </div>
-                </div>
-              </Link>
+                </Link>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -196,18 +202,18 @@ export default function AnimalNutritionPage() {
       {/* Contact Section */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4">
-          <div className="text-center mb-12">
+          <Reveal className="text-center mb-12 space-y-4">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Solicitar Orçamento
             </h2>
             <p className="text-xl text-gray-600">
               Entre em contato para receber uma proposta personalizada
             </p>
-          </div>
+          </Reveal>
 
-          <div className="bg-gray-50 p-8 rounded-2xl shadow-lg">
+          <Reveal className="rounded-2xl bg-gray-50 p-8 shadow-lg">
             <ContactForm formType="racao_animal" />
-          </div>
+          </Reveal>
         </div>
       </section>
 

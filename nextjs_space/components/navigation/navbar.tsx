@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useState, useEffect, useRef } from 'react'
 
@@ -111,7 +111,7 @@ export default function Navbar() {
   }, [isProductsOpen])
 
   const mobilePrimaryLinks = [
-    { label: 'Início', href: '/' },
+    { label: 'InÃ­cio', href: '/' },
     { label: 'Sobre', href: '/sobre' },
     { label: 'Produtos', href: '/#linhas' },
     { label: 'Sustentabilidade', href: '/#sustentabilidade' },
@@ -182,7 +182,7 @@ export default function Navbar() {
 
                 }
 
-                alt="Mineração Itapeva"
+                alt="MineraÃ§Ã£o Itapeva"
 
                 width={180}
 
@@ -216,7 +216,7 @@ export default function Navbar() {
 
               >
 
-                Início
+                InÃ­cio
 
               </Link>
 
@@ -288,7 +288,7 @@ export default function Navbar() {
 
                     <div className="grid grid-cols-2 gap-6">
 
-                      {/* Material de Construção */}
+                      {/* Material de ConstruÃ§Ã£o */}
 
                       <div>
 
@@ -300,7 +300,7 @@ export default function Navbar() {
 
                         >
 
-                          Material de Construção
+                          Material de ConstruÃ§Ã£o
 
                         </Link>
 
@@ -316,7 +316,7 @@ export default function Navbar() {
 
                           >
 
-                            • Ligamil (Plus e Max)
+                            â€¢ Ligamil (Plus e Max)
 
                           </Link>
 
@@ -330,7 +330,7 @@ export default function Navbar() {
 
                           >
 
-                            • Calgeo
+                            â€¢ Calgeo
 
                           </Link>
 
@@ -344,7 +344,7 @@ export default function Navbar() {
 
                           >
 
-                            • Caulim
+                            â€¢ Caulim
 
                           </Link>
 
@@ -352,7 +352,7 @@ export default function Navbar() {
 
                       </div>
 
-                      {/* Ração Animal */}
+                      {/* RaÃ§Ã£o Animal */}
 
                       <div>
 
@@ -364,7 +364,7 @@ export default function Navbar() {
 
                         >
 
-                          Ração Animal
+                          RaÃ§Ã£o Animal
 
                         </Link>
 
@@ -380,7 +380,7 @@ export default function Navbar() {
 
                           >
 
-                            • Caulim
+                            â€¢ Caulim
 
                           </Link>
 
@@ -394,7 +394,7 @@ export default function Navbar() {
 
                           >
 
-                            • Itageo
+                            â€¢ Itageo
 
                           </Link>
 
@@ -430,7 +430,7 @@ export default function Navbar() {
 
               </Link>
 
-              {/* Botão só aparece quando scrolled */}
+              {/* BotÃ£o sÃ³ aparece quando scrolled */}
 
               {isScrolled && (
 
@@ -442,7 +442,7 @@ export default function Navbar() {
 
                 >
 
-                  Solicite um Orçamento
+                  Solicite um OrÃ§amento
 
                 </Link>
 
@@ -530,7 +530,7 @@ export default function Navbar() {
                 <div className="flex justify-center">
                   <Image
                     src="/images/logos/logo-mineracao-itapeva-preto.png"
-                    alt="Logo Minera��ǜo Itapeva"
+                    alt="Logo Mineraï¿½ï¿½Çœo Itapeva"
                     width={150}
                     height={60}
                     className="h-12 w-auto"
@@ -545,4 +545,5 @@ export default function Navbar() {
     </>
   )
 }
+
 

@@ -102,19 +102,15 @@ export default function LigamilPage() {
                style={{ clipPath: 'polygon(50% 0, 100% 50%, 50% 100%, 0 50%)' }}></div>
         </div>
 
-        {/* Back Button */}
-        <Link href="/produtos/material-construcao" className="absolute top-4 left-4 md:top-8 md:left-8 z-50">
-          <Button variant="ghost" className="text-white hover:text-white/80 hover:bg-white/10">
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Voltar
-          </Button>
-        </Link>
-
         {/* Content Grid */}
         <div className="relative z-10 h-full max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-12 flex items-center">
           <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center w-full">
             {/* Left - Text Content */}
             <motion.div {...fadeInProps()} className="text-white space-y-6 md:space-y-8">
+              <Link href="/produtos/material-construcao" className="inline-flex items-center text-sm font-semibold text-white/90 hover:text-white transition-colors mb-4 md:mb-6">
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                Voltar
+              </Link>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                 <span className="text-white">PLASTIFICANTE</span>
                 <br/>
@@ -143,22 +139,20 @@ export default function LigamilPage() {
               </div>
             </motion.div>
 
-            {/* Right - Product Images */}
+            {/* Right - Product Images (desktop only) */}
             <motion.div
               {...fadeInProps(0.1)}
-              className="relative flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 lg:gap-8"
+              className="relative hidden md:flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-8"
             >
               {/* Ligamil Plus wrapper */}
               <div className="relative flex items-center justify-center">
-                <div
-                  className="relative w-44 h-64 sm:w-52 sm:h-80 md:w-60 md:h-[24rem] lg:w-72 lg:h-[26rem] rotate-2 transform transition-all duration-500 hover:scale-105 hover:rotate-0"
-                >
+                <div className="relative w-52 h-80 lg:w-60 lg:h-[24rem] rotate-2 transform transition-all duration-500 hover:scale-105 hover:rotate-0">
                   <Image
                     src="/images/produtos/ligamil-plus-sem-fundo.png"
                     alt="Ligamil Plus 20kg"
                     fill
                     className="object-contain"
-                    sizes="(max-width: 768px) 50vw, (max-width: 1024px) 30vw, 25vw"
+                    sizes="(max-width: 1280px) 30vw, 25vw"
                     style={{ filter: 'drop-shadow(0 24px 36px rgba(0,0,0,0.25))' }}
                     priority
                   />
@@ -167,15 +161,13 @@ export default function LigamilPage() {
 
               {/* Ligamil Max wrapper */}
               <div className="relative flex items-center justify-center">
-                <div
-                  className="relative w-60 h-80 sm:w-80 sm:h-[30rem] md:w-[26rem] md:h-[38rem] lg:w-[30rem] lg:h-[42rem] -rotate-2 transform transition-all duration-500 hover:scale-105 hover:rotate-0"
-                >
+                <div className="relative w-64 h-[28rem] lg:w-[30rem] lg:h-[36rem] -rotate-2 transform transition-all duration-500 hover:scale-105 hover:rotate-0">
                   <Image
                     src="/images/produtos/ligamil-max-lateral.png"
                     alt="Ligamil Max 10kg"
                     fill
                     className="object-contain"
-                    sizes="(max-width: 768px) 50vw, (max-width: 1024px) 30vw, 25vw"
+                    sizes="(max-width: 1280px) 30vw, 25vw"
                     style={{ filter: 'drop-shadow(0 24px 36px rgba(0,0,0,0.25))' }}
                   />
                 </div>
@@ -336,16 +328,19 @@ export default function LigamilPage() {
                 Ao migrar para Ligamil, clientes relatam até <span className="font-semibold text-white">15% de economia</span> por m² e rebocos mais homogêneos em menos tempo.
               </p>
             </motion.div>
-            <motion.div {...fadeInProps(0.1)} className="flex flex-wrap gap-6 text-center">
-              <div className="min-w-[140px] rounded-2xl bg-white/10 px-6 py-4">
-                <p className="text-3xl font-bold text-white">+30%</p>
-                <p className="text-xs uppercase tracking-wide text-blue-100">Trabalhabilidade</p>
-              </div>
-              <div className="min-w-[140px] rounded-2xl bg-white/10 px-6 py-4">
-                <p className="text-3xl font-bold text-white">-2x</p>
-                <p className="text-xs uppercase tracking-wide text-blue-100">Retrabalho</p>
-              </div>
-            </motion.div>
+              <motion.div
+                {...fadeInProps(0.1)}
+                className="grid grid-cols-2 gap-3 text-center sm:max-w-xs sm:mx-auto md:flex md:flex-wrap md:gap-6"
+              >
+                <div className="rounded-2xl bg-white/10 px-4 py-3 md:min-w-[160px] md:px-6 md:py-4">
+                  <p className="text-3xl font-bold text-white md:text-4xl">+30%</p>
+                  <p className="text-xs uppercase tracking-wide text-blue-100">Trabalhabilidade</p>
+                </div>
+                <div className="rounded-2xl bg-white/10 px-4 py-3 md:min-w-[160px] md:px-6 md:py-4">
+                  <p className="text-3xl font-bold text-white md:text-4xl">-2x</p>
+                  <p className="text-xs uppercase tracking-wide text-blue-100">Retrabalho</p>
+                </div>
+              </motion.div>
             <motion.div {...fadeInProps(0.15)} className="inline-flex justify-center">
               <Link href="/contato">
                 <Button size="lg" className="bg-white text-blue-900 transition-transform duration-300 hover:scale-105 hover:bg-blue-50">
