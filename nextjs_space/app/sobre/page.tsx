@@ -237,15 +237,15 @@ export default function AboutPage() {
 
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
 
-              65 anos de evoluo contnua
+              65 anos de evolução contínua
 
-            </h2>
+              </h2>
 
-            <p className="text-gray-600">
+              <p className="text-gray-600">
 
-              Uma jornada de tradio familiar, solidez empresarial e evoluo tecnolgica constante.
+                Uma jornada de tradição familiar, solidez empresarial e evolução tecnológica constante.
 
-            </p>
+              </p>
 
           </Reveal>
 

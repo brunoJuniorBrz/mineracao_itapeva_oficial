@@ -320,19 +320,7 @@ export default function Navbar() {
 
                           </Link>
 
-                          <Link
-
-                            href="/produtos/material-construcao/caulim"
-
-                            className="block px-3 py-1.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-600 rounded transition-colors"
-
-                            onClick={() => setIsProductsOpen(false)}
-
-                          >
-
-                            Caulim
-
-                          </Link>
+                          {/* Caulim foi removido do submenu 'Material de Construção' pois a página não existe mais */}
 
                         </div>
 
