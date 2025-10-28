@@ -111,7 +111,7 @@ export default function Navbar() {
   }, [isProductsOpen])
 
   const mobilePrimaryLinks = [
-    { label: 'InÃ­cio', href: '/' },
+    { label: 'Início', href: '/' },
     { label: 'Sobre', href: '/sobre' },
     { label: 'Produtos', href: '/#linhas' },
     { label: 'Sustentabilidade', href: '/#sustentabilidade' },
@@ -173,25 +173,12 @@ export default function Navbar() {
             <Link href="/" className="flex items-center z-10">
 
               <Image
-
-                src={isScrolled 
-
-                  ? "/images/logos/logo-mineracao-itapeva-preto.png"
-
-                  : "/images/logos/logo-mineracao-itapeva-branco.png"
-
-                }
-
-                alt="MineraÃ§Ã£o Itapeva"
-
+                src={isScrolled ? "/images/logos/logo-mineracao-itapeva-preto.png" : "/images/logos/logo-mineracao-itapeva-branco.png"}
+                alt="Mineração Itapeva"
                 width={180}
-
                 height={60}
-
                 className="h-14 w-auto transition-all duration-300"
-
                 priority
-
               />
 
             </Link>
@@ -216,7 +203,7 @@ export default function Navbar() {
 
               >
 
-                InÃ­cio
+                Início
 
               </Link>
 
@@ -247,7 +234,6 @@ export default function Navbar() {
                 ref={dropdownRef}
 
                 className="relative"
-
                 onMouseEnter={openProductsMenu}
 
                 onMouseLeave={scheduleProductsClose}
@@ -288,7 +274,7 @@ export default function Navbar() {
 
                     <div className="grid grid-cols-2 gap-6">
 
-                      {/* Material de ConstruÃ§Ã£o */}
+                      {/* Material de Construção */}
 
                       <div>
 
@@ -300,7 +286,7 @@ export default function Navbar() {
 
                         >
 
-                          Material de ConstruÃ§Ã£o
+                          Material de Construção
 
                         </Link>
 
@@ -316,7 +302,7 @@ export default function Navbar() {
 
                           >
 
-                            â€¢ Ligamil (Plus e Max)
+                            Ligamil (Plus e Max)
 
                           </Link>
 
@@ -330,7 +316,7 @@ export default function Navbar() {
 
                           >
 
-                            â€¢ Calgeo
+                            Calgeo
 
                           </Link>
 
@@ -344,7 +330,7 @@ export default function Navbar() {
 
                           >
 
-                            â€¢ Caulim
+                            Caulim
 
                           </Link>
 
@@ -352,7 +338,7 @@ export default function Navbar() {
 
                       </div>
 
-                      {/* RaÃ§Ã£o Animal */}
+                      {/* Ração Animal */}
 
                       <div>
 
@@ -364,7 +350,7 @@ export default function Navbar() {
 
                         >
 
-                          RaÃ§Ã£o Animal
+                          Ração Animal
 
                         </Link>
 
@@ -380,7 +366,7 @@ export default function Navbar() {
 
                           >
 
-                            â€¢ Caulim
+                            Caulim
 
                           </Link>
 
@@ -394,7 +380,7 @@ export default function Navbar() {
 
                           >
 
-                            â€¢ Itageo
+                            Itageo
 
                           </Link>
 
@@ -430,7 +416,7 @@ export default function Navbar() {
 
               </Link>
 
-              {/* BotÃ£o sÃ³ aparece quando scrolled */}
+              {/* Botão só aparece quando scrolled */}
 
               {isScrolled && (
 
@@ -442,7 +428,7 @@ export default function Navbar() {
 
                 >
 
-                  Solicite um OrÃ§amento
+                  Solicite um Orçamento
 
                 </Link>
 
@@ -530,7 +516,7 @@ export default function Navbar() {
                 <div className="flex justify-center">
                   <Image
                     src="/images/logos/logo-mineracao-itapeva-preto.png"
-                    alt="Logo Mineraï¿½ï¿½Çœo Itapeva"
+                    alt="Logo Mineração Itapeva"
                     width={150}
                     height={60}
                     className="h-12 w-auto"
