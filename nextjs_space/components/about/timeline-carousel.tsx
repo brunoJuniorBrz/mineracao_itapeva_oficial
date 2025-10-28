@@ -26,6 +26,36 @@ export default function TimelineCarousel({ events }: TimelineCarouselProps) {
 
   const slides = useMemo(() => events ?? [], [events])
 
+    // Fallback events (useful if component is rendered without a prop)
+    const defaultEvents: TimelineEvent[] = [
+      {
+        year: '1959',
+        title: '1959 – Fundação da Mineração Itapeva',
+        description:
+          'Início das operações pela família Ykeuti, com foco em qualidade mineral e respeito ao meio ambiente.'
+      },
+      {
+        year: '1978',
+        title: '1978 – Ampliação das Operações',
+        description:
+          'A nova geração assume a empresa e moderniza os processos, ampliando a capacidade de produção.'
+      },
+      {
+        year: '1990',
+        title: '1990 – Expansão para Novos Segmentos',
+        description:
+          'Entrada decisiva nos mercados cerâmico e de construção civil, com soluções minerais de alta performance.'
+      },
+      {
+        year: '2024',
+        title: '2024 – Referência em Filito Premium',
+        description:
+          'Consolidação como detentora da maior jazida de filito do Brasil, com tecnologia de ponta e excelência operacional.'
+      }
+    ]
+
+    const renderedSlides = useMemo(() => (slides.length ? slides : defaultEvents), [slides])
+
   const scrollPrev = useCallback(() => {
     emblaApi?.scrollPrev()
   }, [emblaApi])
