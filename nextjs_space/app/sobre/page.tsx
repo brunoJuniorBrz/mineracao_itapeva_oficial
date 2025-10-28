@@ -63,55 +63,30 @@ const values = [
 
 
 const timelineMilestones = [
-
   {
-
     year: '1959',
-
-    title: 'Fundao da Minerao Itapeva',
-
+    title: '1959 – Fundação da Mineração Itapeva',
     description:
-
-      'Incio das operaes pela famlia Ykeuti, com foco em qualidade mineral e respeito ao meio ambiente.'
-
+      'Início das operações pela família Ykeuti, com foco em qualidade mineral e respeito ao meio ambiente.'
   },
-
   {
-
     year: '1978',
-
-    title: 'Ampliao das Operaes',
-
+    title: '1978 – Ampliação das Operações',
     description:
-
-      'A nova gerao assume a empresa e moderniza os processos, ampliando a capacidade de produo.'
-
+      'A nova geração assume a empresa e moderniza os processos, ampliando a capacidade de produção.'
   },
-
   {
-
     year: '1990',
-
-    title: 'Expanso para Novos Segmentos',
-
+    title: '1990 – Expansão para Novos Segmentos',
     description:
-
-      'Entrada decisiva nos mercados cermico e de construo civil com solues minerais de alta performance.'
-
+      'Entrada decisiva nos mercados cerâmico e de construção civil, com soluções minerais de alta performance.'
   },
-
   {
-
     year: '2024',
-
-    title: 'Referncia em Filito Premium',
-
+    title: '2024 – Referência em Filito Premium',
     description:
-
-      'Consolidao como detentora da maior jazida de filito do Brasil, com tecnologia de ponta e excelncia operacional.'
-
+      'Consolidação como detentora da maior jazida de filito do Brasil, com tecnologia de ponta e excelência operacional.'
   }
-
 ]
 
 
