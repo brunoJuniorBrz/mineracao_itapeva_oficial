@@ -54,9 +54,11 @@ export default function TimelineCarousel({ events }: TimelineCarouselProps) {
 
     play()
 
-    emblaApi.on('pointerDown', stop)
-    emblaApi.on('pointerUp', play)
-    emblaApi.on('pointerLeave', play)
+  emblaApi.on('pointerDown', stop)
+  emblaApi.on('pointerUp', play)
+  // `pointerLeave` exists at runtime but is not present in the Embla TS union type
+  // Cast the event name to any to satisfy the typechecker without changing runtime behavior
+  emblaApi.on('pointerLeave' as any, play)
 
     return () => {
       stop()
