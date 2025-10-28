@@ -4,7 +4,7 @@
 import { MessageCircle } from 'lucide-react'
 
 export default function WhatsAppButton() {
-  const phoneNumber = "5515997877035" // Número no formato internacional sem + e sem espaços
+  const phoneNumber = "5515991783217" // Número no formato internacional sem + e sem espaços (55 + DDD 15 + número)
   const message = encodeURIComponent("Olá! Gostaria de solicitar um orçamento.")
 
   const handleClick = () => {
